@@ -1,0 +1,1 @@
+/usr/bin/gcc  -Wall -Wextra -Wpedantic -Werror -Wno-unused-parameter  -rdynamic CMakeFiles/example-async.dir/examples/async.c.o  -o example-async liblwmqtt.a -lpthread -lssl -lcrypto 

@@ -1,0 +1,1 @@
+/usr/bin/gcc  -Wall -Wextra -Wpedantic -Werror -Wno-unused-parameter  -rdynamic CMakeFiles/sub.exe.dir/examples/sub.c.o  -o sub.exe liblwmqtt.a -lssl -lcrypto 
