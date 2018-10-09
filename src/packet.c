@@ -461,10 +461,12 @@ lwmqtt_err_t lwmqtt_decode_publish(uint8_t *buf, size_t buf_len, bool *dup, uint
   }
 
   // set payload length
-  msg->payload_len = buf_end - buf_ptr;
+  msg->payload_len = buf_end - buf_ptr - 32;
+  msg->digest_len = 32;
 
   // read payload
-  err = lwmqtt_read_data(&buf_ptr, buf_end, &msg->payload, buf_end - buf_ptr);
+  err = lwmqtt_read_data(&buf_ptr, buf_end, &msg->payload, msg->payload_len);
+  err = lwmqtt_read_data(&buf_ptr, buf_end, &msg->digest, msg->digest_len);
   if (err != LWMQTT_SUCCESS) {
     return err;
   }

@@ -11,15 +11,37 @@
 #define COMMAND_TIMEOUT 5000
 #define MESSAGE_TIMEOUT 1000
 
+#define RED   "\x1B[31m"
+#define GRN   "\x1B[32m"
+#define YEL   "\x1B[33m"
+#define BLU   "\x1B[34m"
+#define MAG   "\x1B[35m"
+#define CYN   "\x1B[36m"
+#define WHT   "\x1B[37m"
+#define RESET "\x1B[0m"
+
 lwmqtt_unix_network_t network = {0};
 
 lwmqtt_unix_timer_t timer1, timer2, timer3;
 
 lwmqtt_client_t client;
 
-static void message_arrived(lwmqtt_client_t *client, void *ref, lwmqtt_string_t topic, lwmqtt_message_t msg) {
-  printf("message_arrived: %.*s => %.*s (%d)\n", (int)topic.len, topic.data, (int)msg.payload_len-32, (char *)msg.payload,
-         (int)msg.payload_len);
+static void message_arrived(lwmqtt_client_t *client, void *ref, lwmqtt_string_t topic, lwmqtt_message_t msg, char **id_list, int idx) {
+	if( idx < 0 )
+		printf(RED " [ INVALID MESSAGE ]\n" RESET);
+	else
+		printf(GRN " [ %s ]\n" RESET, id_list[idx]);
+
+	printf(" FUNCTION : ");
+	for (size_t i = 0; i < msg.payload_len; i++)
+		printf("%c", *(msg.payload+i));
+	printf("\n");
+
+	printf(" HASH VAL : ");
+	for (size_t i = 0; i < msg.digest_len; i++)
+		printf("%02X ", *(msg.digest+i));
+
+	printf("\n\n");
 }
 
 int init_command(char *argv[], char *host, char *topic){
@@ -47,10 +69,12 @@ int init_command(char *argv[], char *host, char *topic){
 			else
 				return -1;
 		}
+		/*
 		printf("argv : %s \n ", *argv);
 		printf("opt  : %d \n ", opt );
 		printf("host : %s \n", host );
 		printf("topic : %s \n", topic);
+		*/
 		argv++;
 	}
 
@@ -79,7 +103,7 @@ int init_idlist(char **id_list, int num, char *filename){
 		 s_buf[i] = '\0';
 		 id_list[id_num] = (char *)malloc( strlen(s_buf)+1 ); 
 		 strcpy(id_list[id_num++], s_buf);
-		 printf("%s \n", s_buf);
+		 //printf("%s \n", s_buf);
 
 		  if( id_num > num-1 ){
 			  printf("id_list is full\n");
@@ -134,7 +158,7 @@ int main(int argc, char *argv[]) {
 
   // prepare options
   lwmqtt_options_t options = lwmqtt_default_options;
-  options.client_id = lwmqtt_string("lwmqtt_sub");
+  options.client_id = lwmqtt_string("lwmqtt_print");
   options.keep_alive = 5;
 
   // send connect packet
@@ -169,7 +193,6 @@ int main(int argc, char *argv[]) {
       err = lwmqtt_yield(&client, available, COMMAND_TIMEOUT, id_list);
       if (err != LWMQTT_SUCCESS) {
 		  if(err == LWMQTT_INTEGRITY_INVALID){
-			  printf("intergrity error!!\n");
 			  continue;
 		  }
         printf("failed lwmqtt_yield: %d\n", err);

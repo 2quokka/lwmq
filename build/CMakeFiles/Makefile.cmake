@@ -52,11 +52,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/pub.exe.dir/DependInfo.cmake"
   "CMakeFiles/lwmqtt.dir/DependInfo.cmake"
-  "CMakeFiles/example-sync.dir/DependInfo.cmake"
-  "CMakeFiles/sub.exe.dir/DependInfo.cmake"
-  "CMakeFiles/example-async.dir/DependInfo.cmake"
+  "CMakeFiles/print.exe.dir/DependInfo.cmake"
   "gtest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "gtest/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   )

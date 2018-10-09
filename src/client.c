@@ -58,17 +58,14 @@ void lwmqtt_topic_check(const char *topic, bool *opt){
 //err = lwmqtt_verify_msg(unames, msg, &uname_idx);
 lwmqtt_err_t lwmqtt_verify_msg(char *unames[], lwmqtt_message_t msg, int *idx){
 
-	char msg_digest[32];
 	unsigned char digest[32];
 	unsigned int len;
-
-	strncpy(msg_digest, (const char *)msg.payload+(msg.payload_len-32), 32);
 	
 	for ( int i = 0 ; ; i++){
 		if(unames[i] != NULL){
-			hmac_sha256((void *)unames[i], strlen(unames[i]), msg.payload, msg.payload_len-32, digest, &len);
+			hmac_sha256((void *)unames[i], strlen(unames[i]), msg.payload, msg.payload_len, digest, &len);
 
-			if(!memcmp(digest, msg_digest, 32)){
+			if(!memcmp(digest, msg.digest, 32)){
 				 *idx = i;
 				return LWMQTT_SUCCESS;
 			}
@@ -76,6 +73,7 @@ lwmqtt_err_t lwmqtt_verify_msg(char *unames[], lwmqtt_message_t msg, int *idx){
 		else
 			break;
 	}
+	*idx = -1;
 	return LWMQTT_INTEGRITY_INVALID;
 }
 
@@ -288,17 +286,14 @@ static lwmqtt_err_t lwmqtt_cycle(lwmqtt_client_t *client, size_t *read, lwmqtt_p
         return err;
       }
 
-	  int uname_idx;
-	  if(id_list != 0){ //secure option active
-		  err = lwmqtt_verify_msg(id_list, msg, &uname_idx);
-		  if (err != LWMQTT_SUCCESS) {
-			return err;
-		  }
-	  }
+	  int uname_idx = -1;
+
+	  if(id_list != NULL)
+		  lwmqtt_verify_msg(id_list, msg, &uname_idx);
 
       // call callback if set
       if (client->callback != NULL) {
-        client->callback(client, client->callback_ref, topic, msg);
+        client->callback(client, client->callback_ref, topic, msg, id_list, uname_idx);
       }
 
       // break early on qos zero
@@ -475,8 +470,6 @@ lwmqtt_err_t lwmqtt_connect(lwmqtt_client_t *client, lwmqtt_options_t options, l
   } else if (packet_type != LWMQTT_CONNACK_PACKET) {
     return LWMQTT_MISSING_OR_WRONG_PACKET;
   }
-  printf("receive connack packet \n");
-
   // decode connack packet
   bool session_present;
   err = lwmqtt_decode_connack(client->read_buf, client->read_buf_size, &session_present, return_code);

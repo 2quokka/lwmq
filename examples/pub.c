@@ -16,7 +16,7 @@ lwmqtt_unix_timer_t timer1, timer2, timer3;
 
 lwmqtt_client_t client;
 
-static void message_arrived(lwmqtt_client_t *client, void *ref, lwmqtt_string_t topic, lwmqtt_message_t msg) {
+static void message_arrived(lwmqtt_client_t *client, void *ref, lwmqtt_string_t topic, lwmqtt_message_t msg, char **id_list, int idx) {
   printf("message_arrived: %.*s => %.*s (%d)\n", (int)topic.len, topic.data, (int)msg.payload_len-32, (char *)msg.payload,
          (int)msg.payload_len);
 }
@@ -143,4 +143,5 @@ int main(int argc, char *argv[]) {
 	printf("failed lwmqtt_keep_alive: %d\n", err);
 	exit(1);
   }
+  return 0;
 }

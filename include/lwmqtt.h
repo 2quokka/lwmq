@@ -148,7 +148,7 @@ typedef int32_t (*lwmqtt_timer_get_t)(void *ref);
  * recommended to call any further lwmqtt methods in the callback as this might result in weird call stacks. The
  * callback should place the received messages in a queue and dispatch them after the caller has returned.
  */
-typedef void (*lwmqtt_callback_t)(lwmqtt_client_t *client, void *ref, lwmqtt_string_t str, lwmqtt_message_t msg);
+typedef void (*lwmqtt_callback_t)(lwmqtt_client_t *client, void *ref, lwmqtt_string_t str, lwmqtt_message_t msg, char **id_list, int idx);
 
 /**
  * The client object.

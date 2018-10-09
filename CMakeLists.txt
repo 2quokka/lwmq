@@ -27,20 +27,24 @@ add_library(lwmqtt ${SOURCE_FILES})
 
 target_link_libraries(lwmqtt ssl crypto)
 
-add_executable(example-sync examples/sync.c)
+#add_executable(example-sync examples/sync.c)
 
-target_link_libraries(example-sync lwmqtt)
+#target_link_libraries(example-sync lwmqtt)
 
-add_executable(pub.exe examples/pub.c)
+#add_executable(pub.exe examples/pub.c)
 
-target_link_libraries(pub.exe lwmqtt)
+#target_link_libraries(pub.exe lwmqtt)
 
-add_executable(sub.exe examples/sub.c)
+add_executable(print.exe examples/print.c)
 
-target_link_libraries(sub.exe lwmqtt)
-add_executable(example-async examples/async.c)
+target_link_libraries(print.exe lwmqtt)
 
-target_link_libraries(example-async lwmqtt pthread)
+#add_executable(sub.exe examples/sub.c)
+
+#target_link_libraries(sub.exe lwmqtt)
+#add_executable(example-async examples/async.c)
+
+#target_link_libraries(example-async lwmqtt pthread)
 
 #set(TEST_FILES
 #        tests/client.cpp
