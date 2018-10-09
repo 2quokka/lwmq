@@ -287,12 +287,9 @@ static lwmqtt_err_t lwmqtt_cycle(lwmqtt_client_t *client, size_t *read, lwmqtt_p
       if (err != LWMQTT_SUCCESS) {
         return err;
       }
-	  // verify payload
-	  bool s_opt = false;
-	  int uname_idx;
-	  lwmqtt_topic_check(topic.data, &s_opt); 
 
-	  if(s_opt){
+	  int uname_idx;
+	  if(id_list != 0){ //secure option active
 		  err = lwmqtt_verify_msg(id_list, msg, &uname_idx);
 		  if (err != LWMQTT_SUCCESS) {
 			return err;

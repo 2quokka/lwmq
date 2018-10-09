@@ -89,9 +89,8 @@ int main(int argc, char *argv[]) {
 	  exit(-1);
   }
 
-  int cr;
-  if ( ( cr = init_command(argv, host, topic, contents, key) ) < 0 ){
-	  printf("command error : %d ", cr);
+  if ( init_command(argv, host, topic, contents, key) < 0 ){
+	  printf("command error\n" );
 	  exit(-1);
   }
 
@@ -117,8 +116,6 @@ int main(int argc, char *argv[]) {
   // prepare options
   lwmqtt_options_t options = lwmqtt_default_options;
   options.client_id = lwmqtt_string("lwmqtt_pub");
-  //options.username = lwmqtt_string("try");
-  //options.password = lwmqtt_string("try");
   options.keep_alive = 5;
 
   // send connect packet
@@ -133,9 +130,7 @@ int main(int argc, char *argv[]) {
   printf("connected!\n");
   
   // loop forever
-	bool s_opt = false;
-	lwmqtt_topic_check(topic, &s_opt);
-	lwmqtt_message_t *msg = lwmqtt_create_msg(LWMQTT_QOS0, false, (uint8_t *)contents, s_opt, key); 
+	lwmqtt_message_t *msg = lwmqtt_create_msg(LWMQTT_QOS0, false, (uint8_t *)contents, true, key); 
 	printf("create msg\n");
 	printf("payload : %s \n", msg->payload);
 	printf("len : %d \n", (int)msg->payload_len);
