@@ -63,12 +63,12 @@ int init_command(char *argv[], char *host, char *topic, char *contents, char *ke
 			else
 				return -1;
 		}
-		printf("argv : %s \n ", *argv);
-		printf("opt  : %d \n ", opt );
-		printf("host : %s \n", host );
-		printf("topic : %s \n", topic);
-		printf("contents : %s \n", contents );
-		printf("key : %s \n", key );
+//		printf("argv : %s \n ", *argv);
+//		printf("opt  : %d \n ", opt );
+//		printf("host : %s \n", host );
+//		printf("topic : %s \n", topic);
+//		printf("contents : %s \n", contents );
+//		printf("key : %s \n", key );
 		argv++;
 	}
 
