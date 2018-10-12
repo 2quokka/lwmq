@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.2.0)
 project(lwmqtt)
 
-add_subdirectory(gtest/googletest)
-include_directories(gtest/googletest/include)
+#add_subdirectory(gtest/googletest)
+#include_directories(gtest/googletest/include)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
@@ -31,17 +31,17 @@ target_link_libraries(lwmqtt ssl crypto)
 
 #target_link_libraries(example-sync lwmqtt)
 
-#add_executable(pub.exe examples/pub.c)
+add_executable(pub.exe examples/pub.c)
 
-#target_link_libraries(pub.exe lwmqtt)
+target_link_libraries(pub.exe lwmqtt)
 
 add_executable(print.exe examples/print.c)
 
 target_link_libraries(print.exe lwmqtt)
 
-#add_executable(sub.exe examples/sub.c)
+add_executable(sub.exe examples/sub.c)
 
-#target_link_libraries(sub.exe lwmqtt)
+target_link_libraries(sub.exe lwmqtt)
 #add_executable(example-async examples/async.c)
 
 #target_link_libraries(example-async lwmqtt pthread)

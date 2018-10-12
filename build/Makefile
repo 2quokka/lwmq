@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/hkedo/MQTT/256dpi/lwmqtt/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lwmqtt
+# Target rules for targets named sub.exe
 
 # Build rule for target.
-lwmqtt: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lwmqtt
-.PHONY : lwmqtt
+sub.exe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sub.exe
+.PHONY : sub.exe
 
 # fast build rule for target.
-lwmqtt/fast:
-	$(MAKE) -f CMakeFiles/lwmqtt.dir/build.make CMakeFiles/lwmqtt.dir/build
-.PHONY : lwmqtt/fast
+sub.exe/fast:
+	$(MAKE) -f CMakeFiles/sub.exe.dir/build.make CMakeFiles/sub.exe.dir/build
+.PHONY : sub.exe/fast
 
 #=============================================================================
 # Target rules for targets named print.exe
@@ -137,30 +137,30 @@ print.exe/fast:
 .PHONY : print.exe/fast
 
 #=============================================================================
-# Target rules for targets named gtest
+# Target rules for targets named lwmqtt
 
 # Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
+lwmqtt: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lwmqtt
+.PHONY : lwmqtt
 
 # fast build rule for target.
-gtest/fast:
-	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
+lwmqtt/fast:
+	$(MAKE) -f CMakeFiles/lwmqtt.dir/build.make CMakeFiles/lwmqtt.dir/build
+.PHONY : lwmqtt/fast
 
 #=============================================================================
-# Target rules for targets named gtest_main
+# Target rules for targets named pub.exe
 
 # Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
+pub.exe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pub.exe
+.PHONY : pub.exe
 
 # fast build rule for target.
-gtest_main/fast:
-	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
+pub.exe/fast:
+	$(MAKE) -f CMakeFiles/pub.exe.dir/build.make CMakeFiles/pub.exe.dir/build
+.PHONY : pub.exe/fast
 
 examples/print.o: examples/print.c.o
 
@@ -188,6 +188,60 @@ examples/print.s: examples/print.c.s
 examples/print.c.s:
 	$(MAKE) -f CMakeFiles/print.exe.dir/build.make CMakeFiles/print.exe.dir/examples/print.c.s
 .PHONY : examples/print.c.s
+
+examples/pub.o: examples/pub.c.o
+
+.PHONY : examples/pub.o
+
+# target to build an object file
+examples/pub.c.o:
+	$(MAKE) -f CMakeFiles/pub.exe.dir/build.make CMakeFiles/pub.exe.dir/examples/pub.c.o
+.PHONY : examples/pub.c.o
+
+examples/pub.i: examples/pub.c.i
+
+.PHONY : examples/pub.i
+
+# target to preprocess a source file
+examples/pub.c.i:
+	$(MAKE) -f CMakeFiles/pub.exe.dir/build.make CMakeFiles/pub.exe.dir/examples/pub.c.i
+.PHONY : examples/pub.c.i
+
+examples/pub.s: examples/pub.c.s
+
+.PHONY : examples/pub.s
+
+# target to generate assembly for a file
+examples/pub.c.s:
+	$(MAKE) -f CMakeFiles/pub.exe.dir/build.make CMakeFiles/pub.exe.dir/examples/pub.c.s
+.PHONY : examples/pub.c.s
+
+examples/sub.o: examples/sub.c.o
+
+.PHONY : examples/sub.o
+
+# target to build an object file
+examples/sub.c.o:
+	$(MAKE) -f CMakeFiles/sub.exe.dir/build.make CMakeFiles/sub.exe.dir/examples/sub.c.o
+.PHONY : examples/sub.c.o
+
+examples/sub.i: examples/sub.c.i
+
+.PHONY : examples/sub.i
+
+# target to preprocess a source file
+examples/sub.c.i:
+	$(MAKE) -f CMakeFiles/sub.exe.dir/build.make CMakeFiles/sub.exe.dir/examples/sub.c.i
+.PHONY : examples/sub.c.i
+
+examples/sub.s: examples/sub.c.s
+
+.PHONY : examples/sub.s
+
+# target to generate assembly for a file
+examples/sub.c.s:
+	$(MAKE) -f CMakeFiles/sub.exe.dir/build.make CMakeFiles/sub.exe.dir/examples/sub.c.s
+.PHONY : examples/sub.c.s
 
 src/client.o: src/client.c.o
 
@@ -330,15 +384,21 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... lwmqtt"
+	@echo "... sub.exe"
 	@echo "... print.exe"
-	@echo "... gtest"
-	@echo "... gtest_main"
+	@echo "... lwmqtt"
+	@echo "... rebuild_cache"
+	@echo "... pub.exe"
 	@echo "... examples/print.o"
 	@echo "... examples/print.i"
 	@echo "... examples/print.s"
+	@echo "... examples/pub.o"
+	@echo "... examples/pub.i"
+	@echo "... examples/pub.s"
+	@echo "... examples/sub.o"
+	@echo "... examples/sub.i"
+	@echo "... examples/sub.s"
 	@echo "... src/client.o"
 	@echo "... src/client.i"
 	@echo "... src/client.s"

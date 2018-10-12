@@ -6,5 +6,5 @@ C_FLAGS =  -Wall -Wextra -Wpedantic -Werror -Wno-unused-parameter   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/hkedo/MQTT/256dpi/lwmqtt/gtest/googletest/include -I/home/hkedo/MQTT/256dpi/lwmqtt/include 
+C_INCLUDES = -I/home/hkedo/MQTT/256dpi/lwmqtt/include 
 
