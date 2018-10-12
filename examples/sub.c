@@ -47,10 +47,10 @@ int init_command(char *argv[], char *host, char *topic){
 			else
 				return -1;
 		}
-		printf("argv : %s \n ", *argv);
-		printf("opt  : %d \n ", opt );
-		printf("host : %s \n", host );
-		printf("topic : %s \n", topic);
+//		printf("argv : %s \n ", *argv);
+//		printf("opt  : %d \n ", opt );
+//		printf("host : %s \n", host );
+//		printf("topic : %s \n", topic);
 		argv++;
 	}
 

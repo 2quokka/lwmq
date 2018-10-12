@@ -130,15 +130,18 @@ int main(int argc, char *argv[]) {
   printf("connected!\n");
   
   // loop forever
+
 	lwmqtt_message_t *msg = lwmqtt_create_msg(LWMQTT_QOS0, false, (uint8_t *)contents, true, key); 
-	printf("create msg\n");
-	printf("payload : %s \n", msg->payload);
-	printf("len : %d \n", (int)msg->payload_len);
-	printf("hash : %s \n", msg->digest);
-	printf("h_len : %d \n", (int)msg->digest_len);
+
+//	printf("create msg\n");
+//	printf("payload : %s \n", msg->payload);
+//	printf("len : %d \n", (int)msg->payload_len);
+//	printf("hash : %s \n", msg->digest);
+//	printf("h_len : %d \n", (int)msg->digest_len);
 
   // publish message
   err = lwmqtt_publish(&client, lwmqtt_string(topic), *msg, COMMAND_TIMEOUT);
+
   if (err != LWMQTT_SUCCESS) {
 	printf("failed lwmqtt_keep_alive: %d\n", err);
 	exit(1);
