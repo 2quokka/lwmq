@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -20,9 +20,9 @@ sys/time.h
 lwmqtt.h
 -
 
-/home/hkedo/MQTT/256dpi/lwmqtt/src/client.c
+/home/pi/MQTT/lwmq/src/client.c
 packet.h
-/home/hkedo/MQTT/256dpi/lwmqtt/src/packet.h
+/home/pi/MQTT/lwmq/src/packet.h
 openssl/evp.h
 -
 openssl/hmac.h
@@ -34,17 +34,17 @@ stdlib.h
 stdio.h
 -
 
-/home/hkedo/MQTT/256dpi/lwmqtt/src/helpers.c
+/home/pi/MQTT/lwmq/src/helpers.c
 string.h
 -
 helpers.h
-/home/hkedo/MQTT/256dpi/lwmqtt/src/helpers.h
+/home/pi/MQTT/lwmq/src/helpers.h
 
-/home/hkedo/MQTT/256dpi/lwmqtt/src/helpers.h
+/home/pi/MQTT/lwmq/src/helpers.h
 lwmqtt.h
 -
 
-/home/hkedo/MQTT/256dpi/lwmqtt/src/os/unix.c
+/home/pi/MQTT/lwmq/src/os/unix.c
 arpa/inet.h
 -
 stdio.h
@@ -64,17 +64,17 @@ unistd.h
 lwmqtt/unix.h
 -
 
-/home/hkedo/MQTT/256dpi/lwmqtt/src/packet.c
+/home/pi/MQTT/lwmq/src/packet.c
 packet.h
-/home/hkedo/MQTT/256dpi/lwmqtt/src/packet.h
+/home/pi/MQTT/lwmq/src/packet.h
 stdio.h
 -
 
-/home/hkedo/MQTT/256dpi/lwmqtt/src/packet.h
+/home/pi/MQTT/lwmq/src/packet.h
 helpers.h
-/home/hkedo/MQTT/256dpi/lwmqtt/src/helpers.h
+/home/pi/MQTT/lwmq/src/helpers.h
 
-/home/hkedo/MQTT/256dpi/lwmqtt/src/string.c
+/home/pi/MQTT/lwmq/src/string.c
 string.h
 -
 lwmqtt.h

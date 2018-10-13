@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/hkedo/MQTT/256dpi/lwmqtt/src/client.c" "/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles/lwmqtt.dir/src/client.c.o"
-  "/home/hkedo/MQTT/256dpi/lwmqtt/src/helpers.c" "/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles/lwmqtt.dir/src/helpers.c.o"
-  "/home/hkedo/MQTT/256dpi/lwmqtt/src/os/unix.c" "/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles/lwmqtt.dir/src/os/unix.c.o"
-  "/home/hkedo/MQTT/256dpi/lwmqtt/src/packet.c" "/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles/lwmqtt.dir/src/packet.c.o"
-  "/home/hkedo/MQTT/256dpi/lwmqtt/src/string.c" "/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles/lwmqtt.dir/src/string.c.o"
+  "/home/pi/MQTT/lwmq/src/client.c" "/home/pi/MQTT/lwmq/build/CMakeFiles/lwmqtt.dir/src/client.c.o"
+  "/home/pi/MQTT/lwmq/src/helpers.c" "/home/pi/MQTT/lwmq/build/CMakeFiles/lwmqtt.dir/src/helpers.c.o"
+  "/home/pi/MQTT/lwmq/src/os/unix.c" "/home/pi/MQTT/lwmq/build/CMakeFiles/lwmqtt.dir/src/os/unix.c.o"
+  "/home/pi/MQTT/lwmq/src/packet.c" "/home/pi/MQTT/lwmq/build/CMakeFiles/lwmqtt.dir/src/packet.c.o"
+  "/home/pi/MQTT/lwmq/src/string.c" "/home/pi/MQTT/lwmq/build/CMakeFiles/lwmqtt.dir/src/string.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

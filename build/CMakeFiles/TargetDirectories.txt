@@ -1,6 +1,6 @@
-/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles/edit_cache.dir
-/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles/sub.exe.dir
-/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles/print.exe.dir
-/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles/lwmqtt.dir
-/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles/rebuild_cache.dir
-/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles/pub.exe.dir
+/home/pi/MQTT/lwmq/build/CMakeFiles/rebuild_cache.dir
+/home/pi/MQTT/lwmq/build/CMakeFiles/lwmqtt.dir
+/home/pi/MQTT/lwmq/build/CMakeFiles/print.exe.dir
+/home/pi/MQTT/lwmq/build/CMakeFiles/edit_cache.dir
+/home/pi/MQTT/lwmq/build/CMakeFiles/pub.exe.dir
+/home/pi/MQTT/lwmq/build/CMakeFiles/sub.exe.dir

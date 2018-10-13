@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -20,7 +20,7 @@ sys/time.h
 lwmqtt.h
 -
 
-/home/hkedo/MQTT/256dpi/lwmqtt/examples/print.c
+/home/pi/MQTT/lwmq/examples/print.c
 stdio.h
 -
 stdlib.h

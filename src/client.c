@@ -61,11 +61,12 @@ lwmqtt_err_t lwmqtt_verify_msg(char *unames[], lwmqtt_message_t msg, int *idx){
 	unsigned char digest[32];
 	unsigned int len;
 	
+	*idx = -1;
 	for ( int i = 0 ; ; i++){
 		if(unames[i] != NULL){
 			hmac_sha256((void *)unames[i], strlen(unames[i]), msg.payload, msg.payload_len, digest, &len);
 
-			if(!memcmp(digest, msg.digest, 32)){
+			if(!memcmp(digest, msg.digest, len)){
 				 *idx = i;
 				return LWMQTT_SUCCESS;
 			}
@@ -73,7 +74,6 @@ lwmqtt_err_t lwmqtt_verify_msg(char *unames[], lwmqtt_message_t msg, int *idx){
 		else
 			break;
 	}
-	*idx = -1;
 	return LWMQTT_INTEGRITY_INVALID;
 }
 
@@ -89,7 +89,7 @@ lwmqtt_message_t* lwmqtt_create_msg(lwmqtt_qos_t qos, bool retained, uint8_t *pa
 	msg->payload = malloc(msg->payload_len);
 
 	memset(msg->payload, 0, msg->payload_len); 
-	strcat((char *)(msg->payload), (char *)payload);
+	strcpy((char *)(msg->payload), (char *)payload);
 
 	if(verif){
 		msg->digest = (uint8_t *)malloc(50);

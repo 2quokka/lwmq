@@ -95,6 +95,8 @@ int main(int argc, char *argv[]) {
 	  exit(-1);
   }
 
+  memset(id_list, 0, sizeof(char *)*50);
+
   if ( init_idlist(id_list, 50, "list.txt") < 0 ) { 
 	  printf("fail to initialize idlist \n ");
 	  exit(-1);
