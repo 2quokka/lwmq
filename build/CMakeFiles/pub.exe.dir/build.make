@@ -60,15 +60,15 @@ include CMakeFiles/pub.exe.dir/flags.make
 CMakeFiles/pub.exe.dir/examples/pub.c.o: CMakeFiles/pub.exe.dir/flags.make
 CMakeFiles/pub.exe.dir/examples/pub.c.o: ../examples/pub.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/pub.exe.dir/examples/pub.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pub.exe.dir/examples/pub.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/examples/pub.c
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pub.exe.dir/examples/pub.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/examples/pub.c
 
 CMakeFiles/pub.exe.dir/examples/pub.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pub.exe.dir/examples/pub.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/examples/pub.c > CMakeFiles/pub.exe.dir/examples/pub.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/examples/pub.c > CMakeFiles/pub.exe.dir/examples/pub.c.i
 
 CMakeFiles/pub.exe.dir/examples/pub.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pub.exe.dir/examples/pub.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/examples/pub.c -o CMakeFiles/pub.exe.dir/examples/pub.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/examples/pub.c -o CMakeFiles/pub.exe.dir/examples/pub.c.s
 
 CMakeFiles/pub.exe.dir/examples/pub.c.o.requires:
 

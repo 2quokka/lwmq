@@ -30,7 +30,7 @@ static void message_arrived(lwmqtt_client_t *client, void *ref, lwmqtt_string_t 
 	if( idx < 0 )
 		printf(RED " [ INVALID MESSAGE ]\n" RESET);
 	else
-		printf(GRN " [ %s ]\n" RESET, id_list[idx]);
+		printf(GRN " [ %s ]\n" RESET, topic.data);
 
 	printf(" FUNCTION : ");
 	for (size_t i = 0; i < msg.payload_len; i++)
@@ -42,46 +42,6 @@ static void message_arrived(lwmqtt_client_t *client, void *ref, lwmqtt_string_t 
 		printf("%02X ", *(msg.digest+i));
 
 	printf("\n\n");
-}
-
-int init_command(char *argv[], char *host, char *topic){
-	int opt = 0;
-	argv++;
-	while(*argv != NULL){
-		if ( !strcmp(*argv, "-h") ){
-			strcpy(host, *(++argv));
-			opt |= 1; 
-		}
-		else if ( !strcmp(*argv, "-t") ){
-			strcpy(topic, *(++argv));
-			opt |= 2;
-		}
-		else
-		{
-			if ( opt % 2 == 0) {
-				strcpy(host, *argv);
-				opt |= 1;
-			}
-			else if ( opt % 4 == 1) {
-				strcpy(topic, *argv);
-				opt |= 2;
-			}
-			else
-				return -1;
-		}
-		/*
-		printf("argv : %s \n ", *argv);
-		printf("opt  : %d \n ", opt );
-		printf("host : %s \n", host );
-		printf("topic : %s \n", topic);
-		*/
-		argv++;
-	}
-
-	if ( opt >= 3 )
-		return 0;
-	else
-		return -1;
 }
 
 int init_idlist(char **id_list, int num, char *filename){
@@ -121,16 +81,12 @@ int init_idlist(char **id_list, int num, char *filename){
 
 int main(int argc, char *argv[]) {
 	char host[30];
-	char topic[256];
 	char *id_list[50];
+	lwmqtt_string_t *topics;
+	lwmqtt_qos_t *qoss;
 
-  if ( argc <2 ) {
-	  fprintf(stdout, "Usage : host topic \n");
-	  exit(-1);
-  }
-
-  if (  init_command(argv, host, topic) < 0 ){
-	  printf("command error \n");
+  if ( argc <3 ) {
+	  fprintf(stdout, "Usage : host topics \n");
 	  exit(-1);
   }
 
@@ -139,6 +95,20 @@ int main(int argc, char *argv[]) {
 	  exit(-1);
   }
   
+  strcpy(host, argv[1]);
+
+  topics = (lwmqtt_string_t *)malloc(sizeof(lwmqtt_string_t)*(argc-2));
+  qoss = (lwmqtt_qos_t *)malloc(sizeof(lwmqtt_qos_t)*(argc-2));
+
+  printf("argc : %d \n", argc);
+  for(int i = 2; i < argc; i++){
+	 topics[i-2] = lwmqtt_string(argv[i]); 
+	 qoss[i-2] = LWMQTT_QOS0;
+	 
+	 printf("topics[%d] : %s \n", i-2, topics[i-2].data);
+  }
+
+
   // initialize client
   lwmqtt_init(&client, malloc(512), 512, malloc(512), 512);
 
@@ -171,8 +141,10 @@ int main(int argc, char *argv[]) {
   // log
   printf("connected!\n");
 
+
   // subscribe to topic
-  err = lwmqtt_subscribe_one(&client, lwmqtt_string(topic), LWMQTT_QOS0, COMMAND_TIMEOUT);
+  err = lwmqtt_subscribe(&client, argc-2, topics, qoss, COMMAND_TIMEOUT);
+  //err = lwmqtt_subscribe_one(&client, lwmqtt_string(topic), LWMQTT_QOS0, COMMAND_TIMEOUT);
   if (err != LWMQTT_SUCCESS) {
     printf("failed lwmqtt_subscribe: %d\n", err);
     exit(1);

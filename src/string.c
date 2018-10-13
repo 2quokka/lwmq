@@ -1,5 +1,4 @@
 #include <string.h>
-
 #include <lwmqtt.h>
 
 lwmqtt_string_t lwmqtt_string(const char *str) {

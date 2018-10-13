@@ -498,6 +498,7 @@ lwmqtt_err_t lwmqtt_subscribe(lwmqtt_client_t *client, int count, lwmqtt_string_
     return err;
   }
 
+  printf("send_packet");
   // send packet
   err = lwmqtt_send_packet_in_buffer(client, len);
   if (err != LWMQTT_SUCCESS) {

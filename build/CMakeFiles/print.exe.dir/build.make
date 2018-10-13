@@ -60,15 +60,15 @@ include CMakeFiles/print.exe.dir/flags.make
 CMakeFiles/print.exe.dir/examples/print.c.o: CMakeFiles/print.exe.dir/flags.make
 CMakeFiles/print.exe.dir/examples/print.c.o: ../examples/print.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/print.exe.dir/examples/print.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/print.exe.dir/examples/print.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/examples/print.c
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/print.exe.dir/examples/print.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/examples/print.c
 
 CMakeFiles/print.exe.dir/examples/print.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/print.exe.dir/examples/print.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/examples/print.c > CMakeFiles/print.exe.dir/examples/print.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/examples/print.c > CMakeFiles/print.exe.dir/examples/print.c.i
 
 CMakeFiles/print.exe.dir/examples/print.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/print.exe.dir/examples/print.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/examples/print.c -o CMakeFiles/print.exe.dir/examples/print.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/examples/print.c -o CMakeFiles/print.exe.dir/examples/print.c.s
 
 CMakeFiles/print.exe.dir/examples/print.c.o.requires:
 

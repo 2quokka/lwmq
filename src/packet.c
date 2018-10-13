@@ -1,4 +1,5 @@
 #include "packet.h"
+#include <stdio.h>
 
 lwmqtt_err_t lwmqtt_detect_packet_type(uint8_t *buf, size_t buf_len, lwmqtt_packet_type_t *packet_type) {
   // set default packet type
@@ -557,6 +558,7 @@ lwmqtt_err_t lwmqtt_encode_subscribe(uint8_t *buf, size_t buf_len, size_t *len, 
   for (int i = 0; i < count; i++) {
     rem_len += 2 + topic_filters[i].len + 1;
   }
+  printf("561\n");
 
   // check remaining length length
   int rem_len_len;
@@ -592,6 +594,7 @@ lwmqtt_err_t lwmqtt_encode_subscribe(uint8_t *buf, size_t buf_len, size_t *len, 
     return err;
   }
 
+  printf("597\n");
   // write all subscriptions
   for (int i = 0; i < count; i++) {
     // write topic
@@ -606,6 +609,7 @@ lwmqtt_err_t lwmqtt_encode_subscribe(uint8_t *buf, size_t buf_len, size_t *len, 
       return err;
     }
   }
+  printf("612\n");
 
   // set length
   *len = buf_ptr - buf;

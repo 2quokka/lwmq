@@ -67,6 +67,8 @@ lwmqtt/unix.h
 /home/hkedo/MQTT/256dpi/lwmqtt/src/packet.c
 packet.h
 /home/hkedo/MQTT/256dpi/lwmqtt/src/packet.h
+stdio.h
+-
 
 /home/hkedo/MQTT/256dpi/lwmqtt/src/packet.h
 helpers.h

@@ -60,15 +60,15 @@ include CMakeFiles/lwmqtt.dir/flags.make
 CMakeFiles/lwmqtt.dir/src/client.c.o: CMakeFiles/lwmqtt.dir/flags.make
 CMakeFiles/lwmqtt.dir/src/client.c.o: ../src/client.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lwmqtt.dir/src/client.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lwmqtt.dir/src/client.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/src/client.c
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lwmqtt.dir/src/client.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/src/client.c
 
 CMakeFiles/lwmqtt.dir/src/client.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lwmqtt.dir/src/client.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/src/client.c > CMakeFiles/lwmqtt.dir/src/client.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/src/client.c > CMakeFiles/lwmqtt.dir/src/client.c.i
 
 CMakeFiles/lwmqtt.dir/src/client.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lwmqtt.dir/src/client.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/src/client.c -o CMakeFiles/lwmqtt.dir/src/client.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/src/client.c -o CMakeFiles/lwmqtt.dir/src/client.c.s
 
 CMakeFiles/lwmqtt.dir/src/client.c.o.requires:
 
@@ -84,15 +84,15 @@ CMakeFiles/lwmqtt.dir/src/client.c.o.provides.build: CMakeFiles/lwmqtt.dir/src/c
 CMakeFiles/lwmqtt.dir/src/helpers.c.o: CMakeFiles/lwmqtt.dir/flags.make
 CMakeFiles/lwmqtt.dir/src/helpers.c.o: ../src/helpers.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lwmqtt.dir/src/helpers.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lwmqtt.dir/src/helpers.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/src/helpers.c
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lwmqtt.dir/src/helpers.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/src/helpers.c
 
 CMakeFiles/lwmqtt.dir/src/helpers.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lwmqtt.dir/src/helpers.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/src/helpers.c > CMakeFiles/lwmqtt.dir/src/helpers.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/src/helpers.c > CMakeFiles/lwmqtt.dir/src/helpers.c.i
 
 CMakeFiles/lwmqtt.dir/src/helpers.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lwmqtt.dir/src/helpers.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/src/helpers.c -o CMakeFiles/lwmqtt.dir/src/helpers.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/src/helpers.c -o CMakeFiles/lwmqtt.dir/src/helpers.c.s
 
 CMakeFiles/lwmqtt.dir/src/helpers.c.o.requires:
 
@@ -108,15 +108,15 @@ CMakeFiles/lwmqtt.dir/src/helpers.c.o.provides.build: CMakeFiles/lwmqtt.dir/src/
 CMakeFiles/lwmqtt.dir/src/packet.c.o: CMakeFiles/lwmqtt.dir/flags.make
 CMakeFiles/lwmqtt.dir/src/packet.c.o: ../src/packet.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lwmqtt.dir/src/packet.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lwmqtt.dir/src/packet.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/src/packet.c
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lwmqtt.dir/src/packet.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/src/packet.c
 
 CMakeFiles/lwmqtt.dir/src/packet.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lwmqtt.dir/src/packet.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/src/packet.c > CMakeFiles/lwmqtt.dir/src/packet.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/src/packet.c > CMakeFiles/lwmqtt.dir/src/packet.c.i
 
 CMakeFiles/lwmqtt.dir/src/packet.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lwmqtt.dir/src/packet.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/src/packet.c -o CMakeFiles/lwmqtt.dir/src/packet.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/src/packet.c -o CMakeFiles/lwmqtt.dir/src/packet.c.s
 
 CMakeFiles/lwmqtt.dir/src/packet.c.o.requires:
 
@@ -132,15 +132,15 @@ CMakeFiles/lwmqtt.dir/src/packet.c.o.provides.build: CMakeFiles/lwmqtt.dir/src/p
 CMakeFiles/lwmqtt.dir/src/string.c.o: CMakeFiles/lwmqtt.dir/flags.make
 CMakeFiles/lwmqtt.dir/src/string.c.o: ../src/string.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/lwmqtt.dir/src/string.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lwmqtt.dir/src/string.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/src/string.c
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lwmqtt.dir/src/string.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/src/string.c
 
 CMakeFiles/lwmqtt.dir/src/string.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lwmqtt.dir/src/string.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/src/string.c > CMakeFiles/lwmqtt.dir/src/string.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/src/string.c > CMakeFiles/lwmqtt.dir/src/string.c.i
 
 CMakeFiles/lwmqtt.dir/src/string.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lwmqtt.dir/src/string.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/src/string.c -o CMakeFiles/lwmqtt.dir/src/string.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/src/string.c -o CMakeFiles/lwmqtt.dir/src/string.c.s
 
 CMakeFiles/lwmqtt.dir/src/string.c.o.requires:
 
@@ -156,15 +156,15 @@ CMakeFiles/lwmqtt.dir/src/string.c.o.provides.build: CMakeFiles/lwmqtt.dir/src/s
 CMakeFiles/lwmqtt.dir/src/os/unix.c.o: CMakeFiles/lwmqtt.dir/flags.make
 CMakeFiles/lwmqtt.dir/src/os/unix.c.o: ../src/os/unix.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hkedo/MQTT/256dpi/lwmqtt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/lwmqtt.dir/src/os/unix.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lwmqtt.dir/src/os/unix.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/src/os/unix.c
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lwmqtt.dir/src/os/unix.c.o   -c /home/hkedo/MQTT/256dpi/lwmqtt/src/os/unix.c
 
 CMakeFiles/lwmqtt.dir/src/os/unix.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lwmqtt.dir/src/os/unix.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/src/os/unix.c > CMakeFiles/lwmqtt.dir/src/os/unix.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hkedo/MQTT/256dpi/lwmqtt/src/os/unix.c > CMakeFiles/lwmqtt.dir/src/os/unix.c.i
 
 CMakeFiles/lwmqtt.dir/src/os/unix.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lwmqtt.dir/src/os/unix.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/src/os/unix.c -o CMakeFiles/lwmqtt.dir/src/os/unix.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hkedo/MQTT/256dpi/lwmqtt/src/os/unix.c -o CMakeFiles/lwmqtt.dir/src/os/unix.c.s
 
 CMakeFiles/lwmqtt.dir/src/os/unix.c.o.requires:
 
