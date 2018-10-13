@@ -29,8 +29,13 @@ lwmqtt_client_t client;
 static void message_arrived(lwmqtt_client_t *client, void *ref, lwmqtt_string_t topic, lwmqtt_message_t msg, char **id_list, int idx) {
 	if( idx < 0 )
 		printf(RED " [ INVALID MESSAGE ]\n" RESET);
-	else
-		printf(GRN " [ %s ]\n" RESET, topic.data);
+	else{
+		printf(GRN " [ ");
+		for (int i = 0 ; i < topic.len ; i++){
+			printf("%c", topic.data[i]);
+		}
+		printf(" ]\n" RESET);
+	}
 
 	printf(" FUNCTION : ");
 	for (size_t i = 0; i < msg.payload_len; i++)
